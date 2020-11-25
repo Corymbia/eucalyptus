@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Fri Mar 09 14:19:53 PST 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.3.0 - (1405108): instance a816c00e-0162-0cd9-58c3-000008135f08 
+on database directory memory:/home/steve/Work/eucalyptus-devel-4.4/clc/modules/block-storage/test  with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
+Loaded from file:/home/steve/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.8.3.0/4013f1afcd5175bf5107c68992679b62902c413c/derby-10.8.3.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_161-b14
+user.dir=/home/steve/Work/eucalyptus-devel-4.4/clc/modules/block-storage
+os.name=Linux
+os.arch=amd64
+os.version=4.15.6-300.fc27.x86_64
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

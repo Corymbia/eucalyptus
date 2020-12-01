@@ -3247,9 +3247,10 @@ public class LoadBalancingActivitiesImpl implements LoadBalancingActivities {
                 LoadBalancerServoInstance.named(instanceId);
         final LoadBalancerServoInstance entity =
                 Entities.uniqueResult(sample);
-        entity.setActivityFailureCount(entity.getActivityFailureCount() + 1);
-        Entities.persist(entity);
-        db.commit();
+        if (entity.getState() != LoadBalancerServoInstance.STATE.Pending) {
+          entity.setActivityFailureCount(entity.getActivityFailureCount() + 1);
+          db.commit();
+        }
       }
     }catch(final Exception ex) {
        LOG.warn(String.format("Failed to mark the VM (%s) as failed", instanceId), ex);

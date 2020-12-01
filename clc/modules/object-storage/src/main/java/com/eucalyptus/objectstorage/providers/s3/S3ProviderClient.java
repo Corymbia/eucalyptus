@@ -446,12 +446,10 @@ public class S3ProviderClient implements ObjectStorageProviderClient {
       connection = (HttpURLConnection) targetURI.toURL().openConnection();
       connection.setRequestMethod("HEAD");
       connection.setUseCaches(false);
-      try {
-        connection.getInputStream();
-        code = connection.getResponseCode();
-      } catch (IOException ex) {
-        code = connection.getResponseCode();
-      }
+      connection.setConnectTimeout(15_000);
+      connection.setReadTimeout(15_000);
+      connection.setRequestProperty("Connection", "close");
+      code = connection.getResponseCode();
       LOG.trace("HEAD op response HTTP " + code);
       return code;
     } catch (Exception ex) {

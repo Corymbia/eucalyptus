@@ -50,6 +50,7 @@ that describes a Eucalyptus instance to be launched.
 -->
 <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     <xsl:output encoding="UTF-8" indent="yes" method="xml"/>
+    <xsl:strip-space elements="*"/>
 
     <xsl:template match="/instance">
         <!-- sanity check on the hypervisor type - we only know 'kvm' and 'xen' -->
